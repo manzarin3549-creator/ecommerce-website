@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaCart | Modern Shopping</title>
+    <meta
+      name="description"
+      content="NovaCart is a modern e-commerce storefront with trending products, categories, and a responsive shopping cart."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand-wrap">
+          <span class="brand-mark">N</span>
+          <span class="brand-name">NovaCart</span>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#deals">Deals</a>
+          <a href="#new">New Arrivals</a>
+          <a href="#reviews">Reviews</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-button" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 015.94 12.56l4.13 4.13 1.41-1.41-4.13-4.13A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
+          </button>
+          <button class="icon-button" aria-label="Account">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 1114 0H5z"/></svg>
+          </button>
+          <button id="cart-button" class="cart-button" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 110 4 2 2 0 010-4zm10 0a2 2 0 110 4 2 2 0 010-4zM6.2 6h14.2l-1.7 8.2A2 2 0 0116.7 16H9.3a2 2 0 01-1.9-1.5L5.4 3H2V1h4.2l.7 3.2H20v2H6.2z"/></svg>
+            <span id="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Fresh picks for every day</p>
+            <h1>Style that moves with you.</h1>
+            <p>
+              Discover premium essentials for home, tech, and everyday life.
+              Enjoy secure shipping and curated deals on trending products.
+            </p>
+            <div class="hero-actions">
+              <a href="#shop" class="primary-btn">Shop now</a>
+              <a href="#deals" class="secondary-btn">View deals</a>
+            </div>
+
+            <ul class="hero-highlights" aria-label="Store features">
+              <li>Free shipping over $75</li>
+              <li>30-day returns</li>
+              <li>Secure checkout</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Featured store image">
+            <div class="product-showcase">
+              <img
+                src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80"
+                alt="Featured product"
+              />
+              <div class="showcase-badge">
+                <strong>New Arrival</strong>
+                <span>Smart Speaker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="promo-strip" id="deals">
+        <div class="container promo-grid">
+          <article>
+            <span>Up to 40% off</span>
+            <strong>Weekend essentials</strong>
+          </article>
+          <article>
+            <span>Member savings</span>
+            <strong>Extra 15% on selected gear</strong>
+          </article>
+          <article>
+            <span>Same-day dispatch</span>
+            <strong>On in-stock favorites</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="catalog" id="shop">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Trending now</p>
+              <h2>Shop popular categories</h2>
+            </div>
+            <a href="#" class="text-link">Browse all</a>
+          </div>
+
+          <div class="category-filters" aria-label="Product categories">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="electronics">Electronics</button>
+            <button class="filter-btn" data-category="home">Home</button>
+            <button class="filter-btn" data-category="fashion">Fashion</button>
+            <button class="filter-btn" data-category="wellness">Wellness</button>
+          </div>
+
+          <div id="product-grid" class="product-grid" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <aside id="cart-panel" class="cart-panel" aria-label="Shopping cart panel">
+      <div class="cart-header">
+        <h3>Your cart</h3>
+        <button id="close-cart" class="close-cart" aria-label="Close cart">×</button>
+      </div>
+
+      <div id="cart-items" class="cart-items"></div>
+
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="subtotal">$0.00</strong>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <strong>Free</strong>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <strong id="total">$0.00</strong>
+        </div>
+        <button class="checkout-btn">Proceed to checkout</button>
+      </div>
+    </aside>
+
+    <div id="cart-overlay" class="cart-overlay" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
